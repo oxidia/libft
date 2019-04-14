@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:43:59 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/31 12:20:51 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/14 23:37:20 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 static int	ft_nbrlen(int n)
 {
-	if (n / 10 == 0)
-		return (1);
-	return (1 + ft_nbrlen(n / 10));
+	int	i;
+
+	i = 1;
+	while ((n /= 10))
+		i++;
+	return (i);
 }
 
 char		*ft_itoa(int nbr)

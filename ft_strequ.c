@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 10:51:14 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/11/09 15:35:28 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/14 23:12:00 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	return (ft_strcmp(s1, s2)) == 0;
+	return (ft_strcmp(s1, s2) == 0);
 }

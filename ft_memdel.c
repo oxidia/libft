@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 10:46:39 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 16:44:41 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/14 23:10:51 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (ap == NULL || *ap == NULL)
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

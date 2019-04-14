@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 11:11:01 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 13:12:11 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/15 00:21:31 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strtrim(char const *s)
 	len = ft_strlen(s);
 	if (len == 0)
 		return (ft_strdup(""));
+	len--;
 	while (*(s + len) == ' ' || *(s + len) == '\t' || *(s + len) == '\n')
 		len--;
 	return (ft_strsub(s, 0, len + 1));

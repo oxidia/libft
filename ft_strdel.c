@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 22:13:57 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 13:33:29 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/14 23:10:14 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_strdel(char **as)
 {
+	if (as == NULL || *as == NULL)
+		return ;
 	free(*as);
 	*as = NULL;
 }
