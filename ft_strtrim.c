@@ -14,17 +14,14 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char	*newstr;
 	size_t	len;
 
 	while (*s == ' ' || *s == '\t' || *s == '\n')
 		s++;
 	len = ft_strlen(s);
-	if (len > 0)
+	if (len == 0)
+		return (ft_strdup(""));
+	while (*(s + len) == ' ' || *(s + len) == '\t' || *(s + len) == '\n')
 		len--;
-	while (len &&
-			(*(s + len) == ' ' || *(s + len) == '\t' || *(s + len) == '\n'))
-		len--;
-	newstr = ft_strsub(s, 0, len + 1);
-	return (newstr);
+	return (ft_strsub(s, 0, len + 1));
 }

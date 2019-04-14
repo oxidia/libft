@@ -1,7 +1,18 @@
-#include "libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strreplace.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/14 21:00:44 by ybahlaou          #+#    #+#             */
+/*   Updated: 2019/04/14 22:30:26 by ybahlaou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	ft_strnewlen(const char *str, const char *old,
+#include "libft.h"
+
+static char	ft_strnewlen(const char *str, const char *old,
 						size_t old_len, size_t new_len)
 {
 	char	*ptr;
@@ -25,7 +36,7 @@ char	ft_strnewlen(const char *str, const char *old,
 	return (len);
 }
 
-char	*ft_strreplace(const char *str, const char *old, const char *new)
+char		*ft_strreplace(const char *str, const char *old, const char *new)
 {
 	char	*res;
 	char	*ptr;
