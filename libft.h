@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/14 23:13:54 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/15 12:43:02 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ int				ft_strendswith(const char *str, const char *sub);
 ssize_t			ft_indexof(const char *str, char c);
 ssize_t			ft_lastindexof(const char *str, char c);
 size_t			ft_countof(const char *str, char c);
-char			*ft_strreplace(const char *str, const char *old, const char *new);
+char			*ft_strreplace(const char *str,
+						const char *old, const char *new);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
