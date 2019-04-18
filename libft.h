@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/15 12:43:02 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/18 02:30:36 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void			ft_putwstr(const wchar_t *str);
 
 size_t			ft_strlen(const char *str);
 char			*ft_strdup(const char *src);
+char			*ft_strndup(const char *src, size_t n);
 char			*ft_strcpy(char *dest, const char *src);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcat(char *dest, const char *src);
