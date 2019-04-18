@@ -6,7 +6,11 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/04/18 02:30:36 by ybahlaou         ###   ########.fr       */
+=======
+/*   Updated: 2019/04/17 19:45:39 by ybahlaou         ###   ########.fr       */
+>>>>>>> 727a687cc746f2351eab06fa9b02dd8d165f6418
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +116,8 @@ char			*ft_strctrim(const char *s, char c);
 char			**ft_strsplit(char const *s, char c);
 size_t			ft_wcslen(const wchar_t *str);
 wchar_t			*ft_wcsdup(const wchar_t *src);
+char			*ft_strtoupper(const char *str);
+char			*ft_strtolower(const char *str);
 
 /*
 ** linked list
