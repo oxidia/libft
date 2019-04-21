@@ -6,98 +6,89 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 16:28:51 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/16 03:16:05 by ussef            ###   ########.fr       */
+/*   Updated: 2019/04/21 04:12:07 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_quicksort(t_list	*lst, int size, int (*cmp)(void*, void*));
-
-static void	ft_swap(t_list *a, t_list *b)
+static t_list	*ft_elminelm(t_list *a, t_list *b)
 {
-	t_list	tmp;
-
-	tmp.content = a->content;
-	tmp.content_size = a->content_size;
 	a->content = b->content;
 	a->content_size = b->content_size;
-	b->content = tmp.content;
-	b->content_size = tmp.content_size;
+	return (b->next);
 }
 
-#include <stdio.h>
-
-void	ft_p(t_list *elm)
+static t_list	*ft_ncpy(t_list *lst, size_t n)
 {
-	int	*ptr;
-
-	ptr = (int*)elm->content;
-	printf("%d ", *ptr);
-}
-
-static void	ft_part(t_list *lst, int left, int right, int (*cmp)(void*, void*))
-{
-	static int	depth = 0;
-	t_list	*pivot;
-	t_list	*i;
-	t_list	*j;
-	int		i_c;
-	int		j_c;
-
-	depth++;
-	if (left >= right)
-		return ;
-	i = lst;
-	i_c = -1;
-	j = ft_lstget(lst, left);
-	j_c = left;
-	pivot = ft_lstget(lst, right);
-	while (j_c < right)
-	{
-		printf("depth: %d, i: %p, j: %p\n", depth, i, j);
-		ft_lstiter(lst, &ft_p);
-		printf("\n");
-		if (cmp(j, pivot) < 0)
-		{
-			if (i_c >= 0)
-				i = i->next;
-			i_c++;
-			ft_swap(j, i);
-		}
-		j = j->next;
-		j_c++;
-	}
-	ft_swap(i->next, pivot);
-	ft_lstiter(lst, &ft_p);
-	printf("\n");
-	ft_quicksort(lst, i_c + 1, cmp);
-	ft_quicksort(i->next, right - i_c, cmp);
-	depth--;
-}
-
-static void	ft_quicksort(t_list	*lst, int size, int (*cmp)(void*, void*))
-{
-	if (size <= 0)
-		return ;
-	ft_part(lst, 0, size - 1, cmp);
-}
-
-void		ft_lstsort(t_list *lst, int (*cmp)(void*, void*))
-{
-	ft_quicksort(lst, (int)ft_lstsize(lst), cmp);
-	return ;
+	t_list	*cpy;
 	t_list	*cur;
 
-	while (lst != NULL)
+	if (lst == NULL || n == 0)
+		return (NULL);
+	cpy = ft_lstnew(lst->content, lst->content_size);
+	cur = cpy;
+	lst = lst->next;
+	while (lst != NULL && n-- >= 2)
 	{
-		cur = lst->next;
-		while (cur != NULL)
-		{
-			if ((*cmp)(lst->content, cur->content) > 0)
-				ft_swap(lst, cur);
-			cur = cur->next;
-		}
+		cur->next = ft_lstnew(lst->content, lst->content_size);
+		cur = cur->next;
 		lst = lst->next;
 	}
+	return (cpy);
+}
+
+static void		ft_merge(t_list *orig, t_list *a, t_list *b, int (*cmp)(t_list*, t_list*))
+{
+	while (a != NULL && b != NULL)
+	{
+		if (cmp(a, b) > 0)	
+			b = ft_elminelm(orig, b);
+		else
+			a = ft_elminelm(orig, a);
+		orig = orig->next;
+	}
+	while (a != NULL)
+	{
+		a = ft_elminelm(orig, a);
+		orig = orig->next;
+	}
+	while (b != NULL)
+	{
+		b = ft_elminelm(orig, b);
+		orig = orig->next;
+	}
+}
+
+static void		ft_mergesort(t_list *lst, size_t size, int (*cmp)(t_list*, t_list*))
+{
+	size_t	mid;
+	t_list	*left;
+	t_list	*right;
+
+	if (size <= 1)
+		return ;
+	mid = size / 2;
+	left = ft_ncpy(lst, mid);
+	right = ft_ncpy(ft_lstget(lst, mid), size - mid);
+	ft_mergesort(left, mid, cmp);
+	ft_mergesort(right, size - mid, cmp);
+	ft_merge(lst, left, right, cmp);
+	while (left != NULL)
+	{
+		lst = left;
+		left = left->next;
+		free(lst);
+	}
+	while (right != NULL)
+	{
+		lst = right;
+		right = right->next;
+		free(lst);
+	}
+}
+
+void			ft_lstsort(t_list *lst, int (*cmp)(t_list*, t_list*))
+{
+	ft_mergesort(lst, ft_lstsize(lst), cmp);
 }
