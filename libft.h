@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/25 22:17:25 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/26 00:41:44 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,8 @@ t_list			*ft_lstget(t_list *lst, size_t index);
 size_t			ft_lstsize(t_list *lst);
 void			ft_lstaddend(t_list **lst, t_list *elm);
 t_list			*ft_lstfind(t_list *lst, void *data, int (*cmp)(void*, void*));
+void			ft_lstremoveat(t_list **lst,
+					void (*del)(void*, size_t), size_t i);
 
 /*
 ** binary tree
