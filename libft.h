@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/21 03:18:59 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/25 18:59:33 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_btree
+{
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}				t_btree;
 
 /*
 **	std

@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 16:28:51 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/21 04:12:07 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/25 22:12:37 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ static t_list	*ft_ncpy(t_list *lst, size_t n)
 	return (cpy);
 }
 
-static void		ft_merge(t_list *orig, t_list *a, t_list *b, int (*cmp)(t_list*, t_list*))
+static void		ft_merge(t_list *orig,
+		t_list *a, t_list *b, int (*cmp)(t_list*, t_list*))
 {
 	while (a != NULL && b != NULL)
 	{
-		if (cmp(a, b) > 0)	
+		if (cmp(a, b) > 0)
 			b = ft_elminelm(orig, b);
 		else
 			a = ft_elminelm(orig, a);
@@ -60,7 +61,8 @@ static void		ft_merge(t_list *orig, t_list *a, t_list *b, int (*cmp)(t_list*, t_
 	}
 }
 
-static void		ft_mergesort(t_list *lst, size_t size, int (*cmp)(t_list*, t_list*))
+static void		ft_mergesort(t_list *lst,
+		size_t size, int (*cmp)(t_list*, t_list*))
 {
 	size_t	mid;
 	t_list	*left;
