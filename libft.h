@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/04/26 00:41:44 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/27 00:13:06 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,8 +149,8 @@ void			ft_lstremoveat(t_list **lst,
 t_btree			*ft_btreenew(const void *content, size_t content_size);
 void			ft_btreeadd(t_btree **root, t_btree *elm,
 				int (*cmp)(t_btree *elm, t_btree *side));
-void			ft_btreeapplypreorder(t_btree *root, void (*ft)(t_btree*));
-void			ft_btreeapplyinorder(t_btree *root, void (*ft)(t_btree*));
-void			ft_btreeapplypostorder(t_btree *root, void (*ft)(t_btree*));
+void			ft_btreepreorder(t_btree *root, void (*ft)(t_btree*));
+void			ft_btreeinorder(t_btree *root, void (*ft)(t_btree*));
+void			ft_btreepostorder(t_btree *root, void (*ft)(t_btree*));
 
 #endif
