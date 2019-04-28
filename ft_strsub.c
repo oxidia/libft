@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 10:56:48 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 16:46:32 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/28 00:49:02 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		i = 0;
 		while (i < len)
 		{
-			*(sub + i) = *(s + start + i);
+			*(sub + i) = *(s + start);
+			start++;
 			i++;
 		}
 		*(sub + i) = '\0';

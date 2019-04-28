@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/10 14:38:37 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 13:14:08 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/04/28 00:56:01 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,20 @@ static char	*ft_copy(char const **src, char c)
 	return (str);
 }
 
+static void	ft_freetab(char **tab)
+{
+	int		i;
+	char	*row;
+
+	i = 0;
+	while ((row = *(tab + i)) != NULL)
+	{
+		free(row);
+		i++;
+	}
+	free(tab);
+}
+
 char		**ft_strsplit(char const *str, char c)
 {
 	char	**array;
@@ -75,7 +89,10 @@ char		**ft_strsplit(char const *str, char c)
 	{
 		*(array + i) = ft_copy(&str, c);
 		if (*(array + i) == NULL)
+		{
+			ft_freetab(array);
 			return (NULL);
+		}
 		i++;
 	}
 	*(array + i) = NULL;
