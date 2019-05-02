@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/05/01 19:18:45 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/05/02 14:04:34 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ void			ft_btreeadd(t_btree **root, t_btree *elm,
 				int (*cmp)(t_btree *elm, t_btree *side));
 t_btree			*ft_btreefind(t_btree *root, void *to_find,
 					int (*cmp)(void*, void*));
+void			ft_btreedel(t_btree **root, void (*del)(void*, size_t));
 void			ft_btreepreorder(t_btree *root, void (*ft)(t_btree*));
 void			ft_btreeinorder(t_btree *root, void (*ft)(t_btree*));
 void			ft_btreepostorder(t_btree *root, void (*ft)(t_btree*));
