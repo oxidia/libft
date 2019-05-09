@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 10:43:26 by ybahlaou          #+#    #+#             */
-/*   Updated: 2018/10/29 16:45:29 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/05/09 12:05:23 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	newstr_len = ft_strlen(s);
-	newstr = ft_strnew(newstr_len + 1);
+	newstr = ft_strnew(newstr_len);
 	if (newstr != NULL)
 	{
 		i = 0;
