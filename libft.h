@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/05/09 12:34:15 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/05/12 17:50:39 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ char			*ft_strstr(const char *str, const char *to_find);
 char			*ft_strnstr(const char *str, const char *to_find, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strpbrk(const char *str, const char *charset);
 int				ft_strstartswith(const char *str, const char *sub);
 int				ft_strendswith(const char *str, const char *sub);
 ssize_t			ft_indexof(const char *str, char c);
