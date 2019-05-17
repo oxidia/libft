@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/05/12 17:50:39 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/05/17 03:05:28 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
-int				ft_isspace(char c);
+int				ft_isspace(int c);
+int				ft_isblank(int c);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int nbr);
 
