@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_putlnbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 12:42:39 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/05/17 02:11:26 by ybahlaou         ###   ########.fr       */
+/*   Created: 2019/06/11 01:56:24 by ybahlaou          #+#    #+#             */
+/*   Updated: 2019/06/11 01:56:52 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+void	ft_putlnbr_fd(long n, int fd)
 {
-	return (c == ' ' || c == '\t' || c == '\n' ||
-			c == '\v' || c == '\f' || c == '\r');
+	unsigned long nb;
+
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = -n;
+	}
+	else
+		nb = n;
+	if (nb >= 10)
+		ft_putlnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

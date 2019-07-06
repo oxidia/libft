@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/05/12 17:50:39 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/06/11 01:57:34 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
-int				ft_isspace(char c);
+int				ft_isspace(int c);
+int				ft_isblank(int c);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int nbr);
 
@@ -71,10 +72,12 @@ void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(const char *s);
 void			ft_putnbr(int n);
+void			ft_putlnbr(long n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_putlnbr_fd(long n, int fd);
 void			ft_putwchar(wchar_t c);
 void			ft_putwstr(const wchar_t *str);
 
@@ -99,6 +102,7 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strpbrk(const char *str, const char *charset);
+char			*ft_strrev(char *str);
 int				ft_strstartswith(const char *str, const char *sub);
 int				ft_strendswith(const char *str, const char *sub);
 ssize_t			ft_indexof(const char *str, char c);
