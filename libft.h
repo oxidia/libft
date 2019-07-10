@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/06/11 01:57:34 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/07/10 01:43:18 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int				ft_isspace(int c);
 int				ft_isblank(int c);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int nbr);
+char			*ft_itoa_base(int nbr, int base);
 
 /*
 ** input/output

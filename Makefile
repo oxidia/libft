@@ -21,6 +21,7 @@ SRCS =	ft_atoi.c			\
 		ft_isspace.c		\
 		ft_isupper.c		\
 		ft_itoa.c			\
+		ft_itoa_base.c		\
 		ft_lastindexof.c	\
 		ft_lstadd.c			\
 		ft_lstaddend.c		\
