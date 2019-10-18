@@ -6,7 +6,7 @@
 /*   By: ybahlaou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/07 11:49:33 by ybahlaou          #+#    #+#             */
-/*   Updated: 2019/07/10 01:43:18 by ybahlaou         ###   ########.fr       */
+/*   Updated: 2019/10/18 10:33:54 by ybahlaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <wchar.h>
+# include <stdarg.h>
 
 typedef struct	s_list
 {
@@ -43,6 +44,7 @@ typedef struct	s_btree
 
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
+void			ft_memndel(const char *format, ...);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *b, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
