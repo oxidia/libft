@@ -2,3 +2,5 @@ tmp*
 *.o
 *.a
 *.out
+main.c
+*.dSYM
